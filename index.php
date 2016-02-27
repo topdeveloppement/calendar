@@ -9,7 +9,7 @@
 </head>
 <body>
 	<?php
-		require_once ('date.php');//Integration de la page "date.php", qui contient la classe Date();
+		require_once ('date.php');//Intégration de la page "date.php", qui contient la classe Date();
 		$date = new Date();//Instanciation de ma class Date
 		$date_Year = new DateTime('now');//Instanciation de la class DateTime() avec en parametre la date courante 
 		$year = $date_Year->format('Y');//Formatage de l'année sur l'Objet $date_Year pour la recupere l'année sous forme d'entier
@@ -38,35 +38,33 @@
 		 		<?php foreach ($m as $number_Of_Months => $d):?>
 		 			<table class="calendar">
 			 			<caption class="calendar_months">
-			 				<div class="months">
-			 					<?php echo ucfirst($month_Fr[$number_Of_Months]) ?>
-			 				</div>
-			 				<?php echo "<div class=\"up_and_down\" id=\"".$month_Fr[$number_Of_Months]."\"><div>";?>
+			 				<div class="months"><?php echo ucfirst($month_Fr[$number_Of_Months]); ?></div>
+			 				<div class="up_and_down"  id="<?php echo $month_Fr[$number_Of_Months]; ?>"><img src="icon/down.png" alt="icon_deplier"></div>
 			 			</caption>
 				 			<thead class="wrapper_dayweek">
 								<tr>
-									<?php for ($i=1; $i <= 7; $i++) { 
-										echo "<th>".ucfirst($days_Fr[$i])."</th>";
-									}?>	
+									<?php for ($i=1; $i <= 7; $i++):?> 
+										<th><?php echo ucfirst($days_Fr[$i]); ?></th>
+									<?php endfor; ?>	
 								</tr>
 							</thead>
 							<tbody class="wrapper_days">
 								<tr>
-									<?php foreach ($d as $day_Of_Month => $day_Of_Week) {
-										if($day_Of_Month == 1 && $day_Of_Week != 1){
-											for($i=1; $i<$day_Of_Week;$i++){ 
-												echo "<td class=\"days--empty\"></td>";
-											}
-										}
-									echo "<td class=\"days\"><strong class=\"day--number\">".$day_Of_Month."</strong></td>";
-									$Number_Of_Days_In_The_Month = cal_days_in_month(CAL_GREGORIAN, $number_Of_Months, $year);//nombre de jours dans le mois
-										if($day_Of_Month == $Number_Of_Days_In_The_Month && $day_Of_Week != 7){
-											for($day_Of_Week; $day_Of_Week < 7; $day_Of_Week++){
-												 echo "<td class=\"days--empty\"></td>";
-											}
-										}
-									if($day_Of_Week == 7 && $day_Of_Month != $Number_Of_Days_In_The_Month){echo "</tr><tr>";}	
-									}?>
+									<?php foreach ($d as $day_Of_Month => $day_Of_Week):?>
+										<?php if($day_Of_Month == 1 && $day_Of_Week != 1):?>
+											<?php for($i=1; $i<$day_Of_Week ; $i++):?><td class="days--empty"></td><?php endfor; ?>
+										<?php endif; ?>
+											<td class="days">
+												<strong class="day--number"><?php echo $day_Of_Month; ?></strong>
+											</td>
+											<?php $Number_Of_Days_In_The_Month = cal_days_in_month(CAL_GREGORIAN, $number_Of_Months, $year); ?>
+											<?php if($day_Of_Month == $Number_Of_Days_In_The_Month && $day_Of_Week != 7):?>
+												<?php for($day_Of_Week; $day_Of_Week < 7 ; $day_Of_Week++):?><td class="days--empty"></td><?php endfor; ?>
+											<?php endif; ?>
+											<?php if($day_Of_Week == 7 && $day_Of_Month != $Number_Of_Days_In_The_Month):?>
+												</tr><tr>
+											<?php endif; ?>	
+									<?php endforeach; ?>
 								</tr>
 							</tbody>
 					</table>
