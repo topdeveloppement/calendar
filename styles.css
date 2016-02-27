@@ -161,13 +161,15 @@ body {
 	-webkit-align-self: flex-end;
 	    -ms-flex-item-align: end;
 	        align-self: flex-end;
-	width: 25px;
-	height: 25px;
-	padding: 5px;
-	margin: 20px 25px;
-	background-image:url(icon/down.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+	width: 75px;
+	height: 100%;
+	padding: 18px 22.5px;
+}
+.up_and_down img {
+	display: block;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
 }
 /*------------------------------------------------------------*\
 					    Style DAYSWEEK
