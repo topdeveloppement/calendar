@@ -39,7 +39,7 @@
 		 			<table class="calendar">
 			 			<caption class="calendar_months">
 			 				<div class="months"><?php echo ucfirst($month_Fr[$number_Of_Months]); ?></div>
-			 				<div class="up_and_down"  id="<?php echo $month_Fr[$number_Of_Months]; ?>"><img src="icon/down.png" alt="icon_deplier"></div>
+			 				<div class="up_and_down"  id="<?php echo $month_Fr[$number_Of_Months]; ?>"><img src="icon/up.png" alt="icon_deplier"></div>
 			 			</caption>
 				 			<thead class="wrapper_dayweek">
 								<tr>
