@@ -9,7 +9,6 @@
 	<script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
 	<script src="js/calendar.js" type="text/javascript"></script>
 	<script src="js/hide_calendar.js" type="text/javascript"></script>
-	<script src="js/new_date_year.js" type="text/javascript"></script>
 </head>
 <body>
 	<?php
