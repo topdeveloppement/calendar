@@ -2,7 +2,7 @@
 						Style BODY
 \*------------------------------------------------------------*/
 body {
-	background-color: #6C8784;
+	background-color: #E8FFFF;
 	font-size: 12px;
 }
 *,*:before,*:after{
@@ -27,11 +27,15 @@ body {
 	max-width: 960px;
 	margin: 40px auto;
 	box-shadow: 0px 0px 20px #000;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
 }
 /*------------------------------------------------------------*\
 						Style YEAR
 \*------------------------------------------------------------*/
 .calendar_years {
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -43,7 +47,7 @@ body {
 	        flex-direction: row;
 	height: 100px;
 	text-align: center;
-	background-color: #888888;	
+	background-color: #043D5D;
 }
 .last, .next {
 	-webkit-box-flex:1;
@@ -73,6 +77,10 @@ body {
 	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
+.last a:hover img {
+	position: relative;
+	right: 10px;
+}
 .next a {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -83,6 +91,10 @@ body {
 	-webkit-flex-direction: row-reverse;
 	    -ms-flex-direction: row-reverse;
 	        flex-direction: row-reverse;
+}
+.next a:hover img {
+	position: relative;
+	left: 10px;
 }
 .calendar_years img {
 	-webkit-align-self: center;
@@ -100,17 +112,17 @@ body {
 	font-size: 18px;
 }
 .last span {
-	margin-left: 10px;
+	margin-left: 20px;
 }
 .next span {
-	margin-right: 10px;
+	margin-right: 20px;
 }
 .title_year {
 	-webkit-box-flex: 4;
 	-webkit-flex: 4;
 	    -ms-flex: 4;
 	        flex: 4;
-	color:#EB9532;
+	color: #F7BC05;
 	font-size: 4em;
 	padding: 18px 0;	
 }
@@ -132,7 +144,8 @@ body {
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.calendar_months {
+.calendar_months { 
+	position: relative;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	    -ms-flex: 1;
@@ -146,7 +159,7 @@ body {
 	-webkit-flex-direction: row;
 	    -ms-flex-direction: row;
 	        flex-direction: row;
-	background-color: #BFBFB5;
+	background-color: #73B1D6;
 }
 .months {
 	-webkit-box-flex: 1;
@@ -156,8 +169,14 @@ body {
 	font-size: 2.2em;
 	padding: 20px 0;
 	margin-left: 75px;
+	text-align: center;
+	color: #CCEEFF;
 }
-.up_and_down {
+.months:hover {
+	color: #FFF;
+}
+.up,
+.down {
 	-webkit-align-self: flex-end;
 	    -ms-flex-item-align: end;
 	        align-self: flex-end;
@@ -165,12 +184,18 @@ body {
 	height: 100%;
 	padding: 18px 22.5px;
 }
-.up_and_down img {
+.up img,
+.down img {
 	display: block;
 	width: 30px;
 	height: 30px;
 	margin: 0 auto;
 	cursor: pointer;
+}
+.down { position: absolute;
+		top: 0;
+		right: 0;
+		visibility: hidden;
 }
 /*------------------------------------------------------------*\
 					    Style DAYSWEEK
@@ -185,11 +210,7 @@ body {
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	background-color: #D8E2EC;
-	border-bottom: solid 4px #CCC;
-	border-top: solid 4px #CCC;
-	margin-left: 4px;
-	margin-right: 4px;
+	background-color: #8BCBDE;
 }
 .wrapper_dayweek tr {
 	-webkit-box-flex:1;
@@ -220,15 +241,16 @@ body {
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	padding: 20px 0;
-	font-size: 1.2em;
+	padding: 10px 0;
+	font-size: 1.4em;
 }
 .wrapper_dayweek tr th:nth-child(-n+6) {
-	border-right: solid 4px #CCC; 
+	border-right: solid 4px #8BCBDE; 
 }
 /*------------------------------------------------------------*\
 						Style DAYS
 \*------------------------------------------------------------*/
+#day_current {color: #CC000D; background-color: #CCEEFF; text-decoration: underline;}
 .wrapper_days {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -239,6 +261,7 @@ body {
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
+	background-color: #8BCBDE;
 }
 .wrapper_days tr {
 	-webkit-box-flex:1;
@@ -254,10 +277,9 @@ body {
 	-webkit-flex-direction: row;
 	    -ms-flex-direction: row;
 	        flex-direction: row;
-	border-bottom: solid 4px #CCC;
-	padding-left: 4px;
-	padding-right: 4px;        
-	
+	border-bottom: solid 4px #8BCBDE;
+	margin-left: 4px;
+	margin-right: 4px;        	
 }
 .days {
 	-webkit-box-flex:1;
@@ -279,9 +301,10 @@ body {
 	        justify-content: flex-end;
 	height: 120px;
 	text-align: center;
-	background-color: #D8E2EC;
+	background-color: #EDF9FF;
 	border: none;	
 }
+.days:hover {background-color: #CCEEFF;}
 .day--number {
 	-webkit-align-self: flex-end;
 	    -ms-flex-item-align: end;
@@ -291,8 +314,7 @@ body {
 	font-size: 1.8em;
 	font-style: italic;
 	border-top-left-radius: 150px 30px;
-	background-color: #ccc;
-	box-shadow: 2px -2px 4px #000;
+	background-color: #8BCBDE ;
 }
 .days--empty {
 	-webkit-box-flex:1;
@@ -301,12 +323,11 @@ body {
 	        flex:1;
 	padding: 40px 0;
 	text-align: center;
-	background-color: #D1D5D8;
 	border: none;	
 }
 .days:nth-child(-n+6) {
-	border-right: solid 4px #CCC; 
+	border-right: solid 4px #8BCBDE; 
 }
 .days--empty:nth-child(-n+6) {
-	border-right: solid 4px #CCC; 
+	border-right: solid 4px #8BCBDE; 
 }
