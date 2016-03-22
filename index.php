@@ -9,12 +9,14 @@
 	<script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
 	<script src="js/calendar.js" type="text/javascript"></script>
 	<script src="js/hide_calendar.js" type="text/javascript"></script>
+	<script src="js/traitement.js" type="text/javascript"></script>
 </head>
 <body>
 	<?php
 		require_once ('date.php');//Intégration de la page "date.php", qui contient la classe Date();
 		$date = new Date();//Instanciation de ma class Date
 		$date_Year = new DateTime('');//Instanciation de la class DateTime() avec en parametre la date courante 
+		//$date_Year->add(new DateInterval('P1Y'));
 		$year = $date_Year->format('Y');//Formatage de l'année sur l'Objet $date_Year pour la recupere l'année sous forme d'entier
 		$day_current = $date_Year->format('j');
 		$month_current = $date_Year->format('n');
@@ -27,15 +29,15 @@
 	 	<?php foreach ($dates as $y => $m):?>
 	 		<div class="calendar_years">
 		 		<div class="last">
-		 			<a href="index.php">
-		 				<img src="icon/last_year.png" alt="symbole_last">
+		 			<a href="#">
+		 				<img id="last_Year" src="icon/last_year.png" alt="symbole_last">
 		 				<span><?php echo $y - 1; ?></span>
 		 			</a>
 		 		</div>
-		 		<h1 class="title_year"><?php echo $y; ?></h1>
+		 		<h1 id="title_year" class="title_year"><?php echo $year; ?></h1>
 		 		<div class="next">
-		 			<a href="index.php">
-		 				<img src="icon/next_year.png" alt="symbole_next">
+		 			<a href="#">
+		 				<img id="next_year" src="icon/next_year.png" alt="symbole_next">
 		 				<span><?php echo $y + 1; ?></span>
 		 			</a> 
 		 		</div>

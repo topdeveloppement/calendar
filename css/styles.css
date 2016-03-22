@@ -77,10 +77,6 @@ body {
 	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
-.last a:hover img {
-	position: relative;
-	right: 10px;
-}
 .next a {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -91,10 +87,6 @@ body {
 	-webkit-flex-direction: row-reverse;
 	    -ms-flex-direction: row-reverse;
 	        flex-direction: row-reverse;
-}
-.next a:hover img {
-	position: relative;
-	left: 10px;
 }
 .calendar_years img {
 	-webkit-align-self: center;
